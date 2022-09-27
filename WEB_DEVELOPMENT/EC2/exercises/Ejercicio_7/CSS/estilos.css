@@ -1,0 +1,33 @@
+body {
+	margin:0;
+	font-family:"Verdana", Arial, Tahoma;
+	font-size:12;
+	color:#FFFFFF;
+	background-color:#00FFFF;
+	
+}
+
+
+#Layer1 {
+	right:40px;
+	top:5px;
+	width:954px;
+	height:80px;
+	z-index:1;
+	background-color: #006699;
+	color: #FFFFFF
+}
+
+
+#Layer2 {
+	
+	left:20px;
+	top:5px;
+	width:113px;
+	height:381px;
+	z-index:1;
+	background-color: #0000FF;
+	color: #FFFFFF
+}
+
+
