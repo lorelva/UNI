@@ -17,4 +17,4 @@ Arreglo[]
 86
 100
 buscar:
-100
+1

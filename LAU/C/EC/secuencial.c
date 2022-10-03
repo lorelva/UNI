@@ -11,7 +11,7 @@ int main(){
     int *arregloD = malloc(0 * sizeof(int));
 
     FILE *archivotxt;
-    archivotxt = fopen("Matriz.txt", "r");
+    archivotxt = fopen("m.txt", "r");
     if (archivotxt == NULL){
         return 1;
     }
@@ -32,7 +32,7 @@ int main(){
                 numF = 1;
                 continue;
                 }
-            arregloD[posArray] = numP;
+            arregloD[posA] = numP;
             posA++;
         }
 
@@ -50,9 +50,9 @@ int main(){
         if (arregloD[i] == numBuscar){
             index = i;
         }
-        i++
+        i++;
     }
-    printf("Numero de la posicion: ", index);
+    printf("Numero de la posicion:%d", index);
     return 0;
 }
 
