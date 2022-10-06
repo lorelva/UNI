@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/stylesheet" href="./css/styles.css">
+    <title>Validaciones</title>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Formulario de Registro</h1>
+        </div>
+    </header>
+    <main class="main">
+        <form action="datos.php" method="post" class="formulario">
+            <div>
+                <div class="form_container">
+                    <label form="nombre" > Nombre(s):</label>
+                    <input type="text" name="nombre" id="nombre" class="formulario_input">
+                </div>
+                <div>
+                    <label> Apellidos:</label>
+                    <input type="text" name="apellidos" id="apellidos">
+                </div>
+                <div class="form_container">
+                    <label for="Direccion"  class="formulario_label"> Direccion:</label>
+                    <input type="text" name="Direccion" id="Direccion">
+                </div>
+                <div class="form_container">
+                    <label> Telefono:</label>
+                    <input type="text" name="Telefono" id="Telefono">
+                </div>
+                <div class="form_container">
+                    <label> Móvil:</label>
+                    <input type="text" name="Movil" id="Movil">
+                </div>
+                <br><br>
+                <div>
+                    <input type="button" class="formulario_btn" value="Enviar Datos" name="submit" id="submit">
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <h6>Derechos reservados @</h6>
+        </div>
+    </footer>
+</body>
+
+</html>

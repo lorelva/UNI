@@ -1,0 +1,41 @@
+body{
+font-family: 'Lexend', 'Helvetica', 'sans-serif';
+background: #E5E5E5;
+}
+
+h1{
+    text-align: center;
+}
+
+h6{
+    text-align: center;
+}
+
+.main{
+    max-width: 800px;
+    width:100%;
+    margin:0;
+    padding: 40px;
+}
+
+.formualrio{
+    width: 80%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.formulario_label{
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.formulario_input{
+    width: 100%;
+    background-color: rgb(245,240,240);
+    border:3px solid transparent;
+    border-radius: 6px;
+    height:45px;
+    line-height: 45px;
+}
