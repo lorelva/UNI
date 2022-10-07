@@ -2,8 +2,50 @@
 #include <stdlib.h>
 #include <string.h>
 
-int char2int(char *array, size_t n);
-int iterativeBinarySearch(int array[], int start_index, int end_index, int element);
+
+int char2int(char *array, size_t n)
+{
+    int number = 0;
+    int mult = 1;
+
+    n = (int)n < 0 ? -n : n;
+
+    while (n--)
+    {
+        if ((array[n] < '0' || array[n] > '9') && array[n] != '-')
+        {
+            if (number)
+            {
+                break;
+            }
+            else
+            {
+                continue;
+            }
+        }
+
+        if (array[n] == '-')
+        {
+            if (number)
+            {
+                number = -number;
+                break;
+            }
+        }
+        else
+        {
+            number += (array[n] - '0') * mult;
+            mult *= 10;
+        }
+    }
+
+    return number;
+}
+
+
+
+
+
 
 int main(){
     int indice = 0,index = -1,tamArr = 0, posA = 0;
@@ -56,41 +98,3 @@ int main(){
     return 0;
 }
 
-int char2int(char *array, size_t n)
-{
-    int number = 0;
-    int mult = 1;
-
-    n = (int)n < 0 ? -n : n;
-
-    while (n--)
-    {
-        if ((array[n] < '0' || array[n] > '9') && array[n] != '-')
-        {
-            if (number)
-            {
-                break;
-            }
-            else
-            {
-                continue;
-            }
-        }
-
-        if (array[n] == '-')
-        {
-            if (number)
-            {
-                number = -number;
-                break;
-            }
-        }
-        else
-        {
-            number += (array[n] - '0') * mult;
-            mult *= 10;
-        }
-    }
-
-    return number;
-}
