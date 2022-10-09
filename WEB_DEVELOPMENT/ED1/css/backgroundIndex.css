@@ -1,0 +1,9 @@
+body {
+    background-color: aquamarine;
+    background-image: url("../IMG/fondo.jpg");
+  }
+
+body{
+  font-size: large;
+  font-family: 'Lucida Sans';
+}
