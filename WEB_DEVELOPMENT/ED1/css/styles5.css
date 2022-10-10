@@ -1,0 +1,46 @@
+h2{
+    color: orange;
+    text-align: center;
+    font-family: 'Calibri';
+}
+
+
+.mark{
+    color: black;
+        background-color: green;
+}
+
+main{
+    margin: 15px;
+    font-size: 18px;
+    color:black;
+    font-family: 'Calibri';
+    text-align: justify;
+}
+
+.textoIzq{
+    width: 100%;
+    clear: both;
+    float: right;
+    position: relative;
+ }
+
+.imgDer{
+    width: 25%;
+    float: right;
+    position: relative;
+}
+
+strong{
+    color: white;
+    background-color: rgb(255, 0, 0);
+}
+
+footer{
+    font-size: 18px;
+    width: auto;
+    font-family: 'Calibri';
+    text-align: justify;
+    padding: 5px;
+    margin: 15px;
+}

@@ -1,0 +1,49 @@
+* {
+    margin: 8px;
+    padding: 0px;
+}
+
+
+h1 {
+    font-family: 'Calibri';
+    color: orange;
+    text-align: center;
+    margin: 10px;
+}
+
+main {
+    margin: 13px;
+    font-family: 'Calibri';
+    text-align: justify;
+    font-size: 18px;
+}
+
+mark {
+    background: yellow;
+}
+
+.text-center {
+    width: 70%;
+    position: relative;
+    float: left;
+}
+
+.img-right {
+    position: relative;
+    object-position: bottom;
+    float: right;
+}
+
+.text-center2 {
+    width: 80%;
+    position: relative;
+    float: right;
+}
+
+li {
+    list-style-type: square;
+}
+
+ul.b {
+    list-style-type: square;
+}

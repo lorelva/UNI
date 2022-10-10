@@ -1,0 +1,65 @@
+header{
+    background-color:  #030543;
+    color: white;
+    text-align: right;
+    font-family: 'Calibri';
+}
+
+h2{
+    color:  #0000ff;
+}
+
+main{
+    position: relative;
+    width: 85%;
+    margin-top: 0%;
+    float: right;
+}
+
+.parte1{
+    background-color: #030543;
+    height: 557px;
+    width: 14%;
+    position: relative;
+    float: left;
+}
+
+.encabezado{
+    background-image: url(../IMG/rayadoformulario.png);
+    color:  #0000ff;
+    text-align: justify;
+    height: 50px;
+    font-family: 'Calibri';
+    font-size: 25px;
+}
+
+.intro{
+    color:  #0000ff;
+    font-size: 25px;
+    font-family: 'Calibri';
+    text-align: center;
+}
+
+.inpu{
+    margin-left: 25px;
+}
+
+
+.form{
+    color:  #030543;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 40%;
+}
+
+select{
+    color: black;
+    width: 200px; 
+}
+
+
+.encabezadoFinal{
+    background-color: orange;
+}
+
+
