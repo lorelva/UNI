@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Prograremos eventos</title>
+</head>
+<body>
+    <form method="post" action="datos.php" name="frm">
+        Nombre<input type="text" name="txtnombre" 
+        onchange="frm.txtnombre.value = frm.txtnombre.value.toUperCase()"><br> <br>
+
+        Apellidos<input type="text" name="txtapps"
+        onchange="frm.txtapps.value = frm.txtapps.value.toUperCase()">> <br> <br>
+
+        Queja:<textarea cols="20" rows="10" name="txtarea"
+        onchange="frm.txtarea.value = frm.txtarea.value.toUperCase()"></textarea>>
+        </textarea>
+
+        
+    </form>
+    
+</body>
+</html>
