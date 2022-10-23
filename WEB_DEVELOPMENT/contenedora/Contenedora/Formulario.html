@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicación</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Formulario de Registro</h1>
+    </header>
+    <main class="main">
+        <div class="formulario">
+            <form name="frm" id="frm" method="POST" action="php/alta.php">
+                <!-- Colocar 3 caracteres-->
+                <div class="form_container">
+                    <label for="nombre" class="form_label">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class="form_input"
+                        onchange="frm.nombre.value=frm.nombre.value.toUpperCase()">
+                    <p class="alert alert-danger" id="nom" name="nom" style="display:none">
+                        Ingresa un nombre valido!!!!
+                    </p>
+                </div>
+
+                <div class="form_container">
+                    <label for="apellido" class="form_label">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido" class="form_input"
+                        onchange="frm.apellido.value=frm.apellido.value.toUpperCase()">
+                    <p class="alert alert-danger" id="app" name="app" style="display:none">
+                        Ingresa un apellido valido!!!!
+                    </p>
+                </div>
+
+                <!--COLOCAR 10 CARACTERES-->
+                <div class="form_container">
+                    <label for="direccion" class="form_label">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion" class="form_input"
+                        onchange="frm.direccion.value=frm.direccion.value.toUpperCase()">
+                    <p class="alert alert-danger" id="dir" name="dir" style="display:none">
+                        Ingresa una direccion valida!!!!
+                    </p>
+                </div>
+
+                <div class="form_container">
+                    <label for="telefono" class="form_label">Teléfono:</label>
+                    <input type="text" name="telefono" id="telefono" class="form_input" onkeypress="
+                            if(event.keyCode<48 || event.keyCode >57){
+                                event.returnValue=false;
+                            }">
+                    <p class="alert alert-danger" id="tel" name="tel" style="display:none">
+                        Ingresa un numero de telefono valido!!!!
+                    </p>
+
+                </div>
+
+                <div class="form_container">
+                    <label for="email" class="form_label">E-mail:</label>
+                    <input type="text" name="email" id="email" class="form_input">
+                    <p class="alert alert-primary" id="ema" name="ema" style="display:none">
+                        Gracias por completar el registrar!!!!
+                    </p>
+
+                </div>
+                <br>
+                <div class="form_container">
+                    <input type="button" value="Enviar Datos" class="form_btn" onclick="validacion();">
+                    <p class="alert alert-success" id="btn" name="btn" style="display:none">
+                        Ingresa un email valido!!!!
+                    </p>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <footer class="footer">
+        <h6>Derechos registrados @</h6>
+    </footer>
+</body>
+<script src="js/validaciones.js"></script>
+</html>
