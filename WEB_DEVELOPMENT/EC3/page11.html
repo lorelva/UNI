@@ -4,36 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./js/valida.js">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Validaciones</title>
+    <script language="javaScript">
+        function validacion() {
+            if (document.getElementById("nombre").value.length == 0) {
+                alert("Favor de escribir su Nombre");
+                document.frm.nombre.focus();
+                return false;
+            }
+            if (document.getElementById("apellidos").value.length == 0) {
+                alert("Favor de escribir su Apellidos");
+                document.frm.apellidos.focus();
+                return false;
+            }
+            if (document.getElementById("Direccion").value.length == 0) {
+                alert("Favor de escribir su Direccion");
+                document.frm.Direccion.focus();
+                return false;
+            }
+            if (document.getElementById("Telefono").value.length == 0) {
+                alert("Favor de escribir su Telefono");
+                document.frm.Telefono.focus();
+                return false;
+            }
+            if (document.getElementById("Movil").value.length == 0) {
+                alert("Favor de escribir su Movil");
+                document.frm.Movil.focus();
+                return false;
+            }
+            frm.submit();
+        }
+    </script>
 </head>
-<body>
-    <form method="post" action="datos.php" name="frm">
-        <h1>REGISTRAME!!!</h1>
-        <table>
-            <tr>
-                <td>Nombre </td>
-                <td><input type="text" name="txtnombre" id="txtnombre" maxlength="20"></td>
-            </tr>
-            <tr>
-                <td>Apellido Paterno </td>
-                <td><input type="text" name="txtapp" id="txtapp" maxlength="20"></td>
-            </tr>
-            <tr>
-                <td>Apellido Materno </td>
-                <td><input type="text" name="txtapm" id="txtapm" maxlength="20"></td>
-            </tr>
-            <tr>
-                <td>Edad </td>
-                <td><input type="text" name="txtedad" id="txtedad" maxlength="20" Onkeypress="if( event.keyCode < 48 || event.keyCode > 57 ) 
-                            event.returnValue=false;"></td>
-            </tr>
-            <tr>
-                <td> </td>
-                <td><input type="button" value="Inserta Registro" onclick="validacion()"></td>
-            </tr>
-        </table>
-    </form>
-</body>
 
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Formulario de Registro</h1>
+        </div>
+    </header>
+    <main class="main">
+        <form action="datos.php" method="post" class="formulario" action="datos.php" name="frm">
+            <div>
+                <div class="form_container">
+                    <label for="nombre" class="formulario_label"> Nombre(s):</label>
+                    <input type="text" name="nombre" id="nombre" class="formulario_input">
+                </div>
+                <div class="form_container">
+                    <label for="apellidos" class="formulario_label"> Apellidos:</label>
+                    <input type="text" name="apellidos" id="apellidos" class="formulario_input">
+                </div>
+                <div class="form_container">
+                    <label for="Direccion" class="formulario_label"> Direccion:</label>
+                    <input type="text" name="Direccion" id="Direccion" class="formulario_input">
+                </div>
+                <div class="form_container">
+                    <label for="Telefono" class="formulario_label"> Telefono:</label>
+                    <input type="text" name="Telefono" id="Telefono" class="formulario_input">
+                </div>
+                <div class="form_container">
+                    <label for="Movil" class="formulario_label"> Móvil:</label>
+                    <input type="text" name="Movil" id="Movil" class="formulario_input">
+                </div>
+                <br><br>
+                <div class="form_container">
+                    <input type="button" class="formulario_btn" value="Enviar Datos" onclick="validacion()">
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <h6>Derechos reservados @LORENA VALLE</h6>
+        </div>
+    </footer>
+</body>
 </html>

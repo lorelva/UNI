@@ -1,25 +1,30 @@
+
 function validacion() {
-
-    if (document.getElementById("txtnombre").value.length == 0) {
-        alert("Favor de escribir su nombre");
-        doument.frm.txtnombre.focus();
+    if (document.getElementById("nombre").value.length == 0) {
+        alert("Favor de escribir su Nombre");
+        document.frm.nombre.focus();
         return false;
     }
-    if (document.getElementById("txtapp").value.length == 0) {
-        alert("Favor de escribir su apellido paterno");
-        doument.frm.txtapp.focus();
+    if (document.getElementById("apellidos").value.length == 0) {
+        alert("Favor de escribir su Apellidos");
+        document.frm.apellidos.focus();
         return false;
     }
-    if (document.getElementById("txtapm").value.length == 0) {
-        alert("Favor de escribir su apellido materno");
-        doument.frm.txtapm.focus();
+    if (document.getElementById("Direccion").value.length == 0) {
+        alert("Favor de escribir su Direccion");
+        document.frm.Direccion.focus();
         return false;
     }
-
-    if (document.getElementById("txtedad").value.length == 0) {
-        alert("Favor de escribir su edad");
-        doument.frm.txtedad.focus();
+    if (document.getElementById("Telefono").value.length == 0) {
+        alert("Favor de escribir su Telefono");
+        document.frm.Telefono.focus();
+        return false;
+    }
+    if (document.getElementById("Movil").value.length == 0) {
+        alert("Favor de escribir su Movil");
+        document.frm.Movil.focus();
         return false;
     }
     frm.submit();
 }
+
