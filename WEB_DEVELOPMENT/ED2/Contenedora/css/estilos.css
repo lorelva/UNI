@@ -1,41 +1,41 @@
-body{
+body {
     background: #e5e5e5;
     margin: auto 0;
 }
 
-h1,h6{
+h1, h6 {
     text-align: center;
 }
 
-.main{
+.main {
     max-width: 800px;
     width: 100%;
     margin: auto;
     padding: 40px;
 }
 
-.formulario{
+.formulario {
     width: 80%;
     max-width: 850px;
     margin: 0 auto;
 }
 
-.form_label{
+.form_label {
     display: block;
     font-weight: bold;
     padding: 10px;
     cursor: pointer;
 }
 
-.form_input{
+.form_input {
     width: 100%;
-    background: rgb(245,240,240);
+    background: rgb(245, 240, 240);
     border: 6px solid transparent;
     border-radius: 6px;
     height: 45px;
 }
 
-.form_btn{
+.form_btn {
     width: 100%;
     background: black;
     height: 45px;

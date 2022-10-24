@@ -48,13 +48,13 @@
                 <div class="form_container">
                     <label for="telefono" class="form_label">Teléfono:</label>
                     <input type="text" name="telefono" id="telefono" class="form_input" onkeypress="
-                            if(event.keyCode<48 || event.keyCode >57){
+                            if(event.keyCode<48 || event.keyCode >57)
+                            {
                                 event.returnValue=false;
                             }">
                     <p class="alert alert-danger" id="tel" name="tel" style="display:none">
                         Ingresa un numero de telefono valido!!!!
                     </p>
-
                 </div>
 
                 <div class="form_container">
@@ -66,6 +66,28 @@
 
                 </div>
                 <br>
+                <br>
+                <div class="form_container" align="center">
+                    <label for="sex" class="form_label">SEXO:</label>
+                    <input type="radio" name="sexo" id="sexo" value="Hombre">HOMBRE <br>
+                    <input type="radio" name="sexo" id="sexo" value="Mujer">MUJER <br>
+                    <input type="radio" name="sexo" id="sexo" value="Otro">OTRO <br>
+                    <p class="alert alert-danger" id="genero" name="genero" style="display: none">
+                        Selecciona una de las opciones</p>
+                </div>
+                <br>
+                <br>
+                <div class="form_container" align="center">
+                    <label for="pasatiempos" class="form_label">PASATIEMPOS:</label>
+                    <input type="checkbox" name="pasat" id="pasat" value="Lectura">LECTURA<br>
+                    <input type="checkbox" name="pasat" id="pasat" value="Pintura">PINTURA<br>
+                    <input type="checkbox" name="pasat" id="pasat" value="Recreacion">RECREACION DEPORTIVA<br>
+                    <input type="checkbox" name="pasat" id="pasat" value="Cultura">OTRO<br>
+                    <p class="alert alert-danger" id="pastime" name="pastime" style="display: none">
+                        Selecciona una de las opciones</p>
+                </div>
+                <br>
+                <br>
                 <div class="form_container">
                     <input type="button" value="Enviar Datos" class="form_btn" onclick="validacion();">
                     <p class="alert alert-success" id="btn" name="btn" style="display:none">
@@ -73,7 +95,6 @@
                     </p>
                 </div>
             </form>
-
         </div>
     </main>
     <footer class="footer">
@@ -81,4 +102,5 @@
     </footer>
 </body>
 <script src="js/validaciones.js"></script>
+
 </html>
