@@ -9,7 +9,7 @@
 </head>
 <body>
     <a href="interface.php">INTERFACE</a><br>
-    <a href="menuEjerciciosConversion.php">EJERCICIOS MEDIDAS</a><br>
+    <a href="menuEjerciciosConversion.php">EJERCICIOS DE  MEDIDAS</a><br>
     <a href="page1.php">PAGINA 1</a><br>
     <a href="page2.php">PAGINA 2</a><br>
     <a href="page3.php">PAGINA 3</a><br>
