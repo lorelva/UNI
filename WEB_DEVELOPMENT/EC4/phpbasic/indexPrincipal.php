@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDICE DE EC4</title>
+    <title>EC4 EJERCICIOS DE PHP</title>
 </head>
-<body>
-    <a href="interface.php">INTERFACE</a><br>
-    <a href="menuEjerciciosConversion.php">EJERCICIOS DE  MEDIDAS</a><br>
+<body style="background-color: aquamarine; text-align:center;">
+    <a href="./EJERCICIOS/menuPrincipal.php">EJERCICIOS DE  MEDIDAS</a><br>
     <a href="page1.php">PAGINA 1</a><br>
     <a href="page2.php">PAGINA 2</a><br>
     <a href="page3.php">PAGINA 3</a><br>
@@ -19,6 +18,7 @@
     <a href="page7.php">PAGINA 7</a><br>
     <a href="page8.php">PAGINA 8</a><br>
     <a href="page9.php">PAGINA 9</a><br>
+    <a href="interface.php">INTERFACE</a><br>
 </body>
 </html>
 
