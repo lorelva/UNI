@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php 
-        $año = $_POST['txtaño'];
+        $año = $_POST['year'];
         $edad = date("Y") - $año;
     ?>
     <form method='post' action='anio.php'>
-        Año <input type="text" name="txtaño" value="<?php echo $año; ?>" disabled>
+        Año <input type="text" name="year" value="<?php echo $año; ?>" disabled>
         <br><br>
         Edad : <input type="text" value="<?php echo $edad; ?>" disabled>
         <br><br>

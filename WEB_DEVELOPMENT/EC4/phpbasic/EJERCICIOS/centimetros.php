@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversion de Centimetros a Pulgadas</title>
+    <title>Conversion de cm a Pulgadas</title>
 </head>
 <body>
     <?php 
-        $centimetros = $_POST['txtcentimetros'];
-        $pulgadas = $centimetros*0.393701;
+        $cm = $_POST['cm'];
+        $pulgadas = $cm*0.393701;
     ?>
-    <form method='post' action='centimetros.php'>
-        Centimetros <input type="text" name="txtcentimetros" value="<?php echo $centimetros; ?>" disabled>
+    <form method='post' action='cm.php'>
+        cm <input type="text" name="cm" value="<?php echo $cm; ?>" disabled>
         <br><br>
         Resultado: <input type="text" value="<?php echo $pulgadas; ?>" disabled>
         <br><br>

@@ -10,11 +10,11 @@
 </head>
 <body>
     <?php 
-        $yardas = $_POST['txtyardas'];
+        $yardas = $_POST['yardas'];
         $metros = $yardas/1.09361;
     ?>
     <form method='post' action='yardas.php'>
-        Yardas <input type="text" name="txtyardas" value="<?php echo $yardas; ?>" disabled>
+        Yardas <input type="text" name="yardas" value="<?php echo $yardas; ?>" disabled>
         <br><br>
         Resultado: <input type="text" value="<?php echo $metros; ?>" disabled>
         <br><br>

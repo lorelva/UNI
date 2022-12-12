@@ -4,7 +4,8 @@ Estructuras de control selectivo o bifurcativo
     
     echo"<hr>";
     $lenguaje = "HTML5";
-    switch($lenguaje){
+    switch($lenguaje)
+    {
         case 'PHP':
             echo"Se trata de un lenguaje de programacion de Backend";
         break;
@@ -22,7 +23,7 @@ Estructuras de control selectivo o bifurcativo
         break;
 
         default;
-            echo"¡Opcion incorrecta. Vuelva a intentar!";
+            echo"¡Opcion incorrecta. Intente de nuevo!";
         break;
     }
 

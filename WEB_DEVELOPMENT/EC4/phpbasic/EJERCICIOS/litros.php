@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php 
-        $litros = $_POST['txtlitros'];
+        $litros = $_POST['lt'];
         $galones = $litros*0.264172;
     ?>
     <form method='post' action='litros.php'>
-        Litros <input type="text" name="txtlitros" value="<?php echo $litros; ?>" disabled>
+        Litros <input type="text" name="lt" value="<?php echo $litros; ?>" disabled>
         <br><br>
         Resultado: <input type="text" value="<?php echo $galones; ?>" disabled>
         <br><br>

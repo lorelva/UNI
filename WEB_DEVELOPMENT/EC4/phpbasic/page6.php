@@ -29,7 +29,7 @@ Estructuras de control selectivo o bifurcativo
     {
         echo"iguales";
            }else{
-                echo"2 es una edad como menor";
+                echo"2 es una edad a rango menor";
            }
     echo"<br>";
 

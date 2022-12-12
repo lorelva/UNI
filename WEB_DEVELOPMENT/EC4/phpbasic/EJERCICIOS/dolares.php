@@ -9,11 +9,11 @@
 </head>
 <body>
     <?php 
-        $dolares = $_POST['txtdolares'];
+        $dolares = $_POST['USD'];
         $pesos = $dolares*20;
     ?>
     <form method='post' action='dolares.php'>
-        dolares <input type="text" name="txtdolares" value="<?php echo $dolares; ?>" disabled>
+        dolares <input type="text" name="USD" value="<?php echo $dolares; ?>" disabled>
         <br><br>
         Resultado: <input type="text" value="<?php echo $pesos; ?>" disabled>
         <br><br>

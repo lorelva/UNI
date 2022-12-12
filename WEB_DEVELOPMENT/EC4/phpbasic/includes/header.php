@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="header">
-        <h1>Aplicación Web</h1>
+        <h1>APLICACIÓN WEB</h1>
   </header>
   <main class="main">
      <div class="formulario">   
