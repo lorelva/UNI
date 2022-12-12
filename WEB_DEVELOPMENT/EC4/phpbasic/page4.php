@@ -2,7 +2,7 @@
 Comentarios en una sola linea o varias 
 
 <?php
-echo"<hr>";//echo"Comentario en una sola linea php";
+echo"<hr>";      //echo "Comentario en una sola linea php";
 echo"<hr>";
     /*
     echo" HOLAAAA esto es 
