@@ -15,6 +15,7 @@ switch ($desc) {
 
         echo "<h2>¡GRACIAS POR SU COMPRA!</h2>";
         break;
+
     case '2':
         $SubTotal = (775 * $ticket);
         $ConDescuento = ($SubTotal * 0.18);
@@ -26,6 +27,7 @@ switch ($desc) {
 
         echo "<h2>¡GRACIAS POR SU COMPRA!</h2>";
         break;
+
     case '3':
         $SubTotal = (775 * $ticket);
         $ConDescuento = ($SubTotal * 0.25);
@@ -37,6 +39,7 @@ switch ($desc) {
 
         echo "<h2>¡GRACIAS POR SU COMPRA!</h2>";
         break;
+        
     default:
         echo "NO VALIDO SU SELECCIÓN";
         break;
