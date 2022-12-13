@@ -39,7 +39,7 @@
             $ConDescuento = $SubTotal * 0.25;
             $PrecioTotal =  $SubTotal - $ConDescuento;
 
-            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS: $numTickets </h2>";
+            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS: $numTickets  </h2>";
 
             echo "<h2>TOTAL A PAGAR: $ $PrecioTotal</h2>";
 
