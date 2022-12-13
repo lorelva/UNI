@@ -8,7 +8,7 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
 
-<form method="POST" action="ticket.php">
+<form method="POST" action="MostrarBoleto.php">
     <fieldset class="form-group">
         <div class="form-group">
             <h1> BIENVENIDO(A) </h1>
