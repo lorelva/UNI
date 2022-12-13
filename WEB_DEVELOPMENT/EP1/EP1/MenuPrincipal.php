@@ -14,7 +14,7 @@
             <h1> BIENVENIDO(A) </h1>
             <legend class="col-form-label-lg">ENTRADA GENERAL: $775 PESOS</legend>
             <label> FAVOR DE SELECCIONAR LA CANTIDAD DE BOLETOS A COMPRAR</label>
-            <input type="number" id="numTickets" name="numTickets" min="0" class="form-control" aria-describedby="numTicketsAyuda"
+            <input type="number" id="numTickets" name="numTickets" min="0" class="form-control" 
                 placeholder="Coloque la cantidad de numTickets">
             
         </div>
@@ -35,6 +35,4 @@
         </div>
     </fieldset>
 </form>
-</body>
 
-</html>
