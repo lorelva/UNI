@@ -2,15 +2,15 @@
 
     <?php
     $desc = $_POST['desc'];
-    $ticket = $_POST['ticket'];
+    $numTickets = $_POST['numTickets'];
 
     switch ($desc) {
         case '1':
-            $SubTotal = (775 * $ticket);
-            $ConDescuento = ($SubTotal * 0.15);
-            $PrecioXpagar =  ($SubTotal - $ConDescuento);
+            $SubTotal = 775 * $numTickets;
+            $ConDescuento = $SubTotal * 0.15;
+            $PrecioXpagar =  $SubTotal - $ConDescuento;
 
-            echo "<h2>COMRPA:$ticket ticket </h2>";
+            echo "<h2>COMRPA:$numTickets numTickets </h2>";
 
             echo "<h2>TOTAL A PAGAR:  $PrecioXpagar</h2>";
 
@@ -18,25 +18,25 @@
             break;
 
         case '2':
-            $SubTotal = (775 * $ticket);
-            $ConDescuento = ($SubTotal * 0.18);
-            $PrecioTotal =  ($SubTotal - $ConDescuento);
+            $SubTotal = 775 * $numTickets;
+            $ConDescuento = $SubTotal * 0.18;
+            $PrecioTotal =  $SubTotal - $ConDescuento;
 
-            echo "<h2>COMPRA: $ticket ticket </h2>";
+            echo "<h2>COMPRA: $numTickets numTickets </h2>";
 
-            echo "<h2>TOTAL A PAGAR: $PrecioXpagar</h2>";
+            echo "<h2>TOTAL A PAGAR: $PrecioTotal</h2>";
 
             echo "<h2>¡GRACIAS POR SU COMPRA!</h2>";
             break;
 
         case '3':
-            $SubTotal = (775 * $ticket);
-            $ConDescuento = ($SubTotal * 0.25);
-            $PrecioTotal =  ($SubTotal - $ConDescuento);
+            $SubTotal = 775 * $numTickets;
+            $ConDescuento = $SubTotal * 0.25;
+            $PrecioTotal =  $SubTotal - $ConDescuento;
 
-            echo "<h2>COMPRA: $ticket ticket </h2>";
+            echo "<h2>COMPRA: $numTickets numTickets </h2>";
 
-            echo "<h2>TOTAL A PAGAR:  $PrecioXpagar</h2>";
+            echo "<h2>TOTAL A PAGAR:  $PrecioTotal</h2>";
 
             echo "<h2>¡GRACIAS POR SU COMPRA!</h2>";
             break;
