@@ -42,7 +42,7 @@
             break;
 
         default:
-            echo "NO VALIDO SU SELECCIÓN";
+            echo " SU SELECCIÓN NO ES VALIDA";
             break;
     }
     ?>
