@@ -15,7 +15,7 @@
             $ConDescuento = $SubTotal * 0.15;
             $PrecioXpagar =  $SubTotal - $ConDescuento;
 
-            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS:$numTickets  </h2>";
+            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS:$numTickets</h2>";
 
             echo "<h2>TOTAL A PAGAR: $ $PrecioXpagar</h2>";
 
@@ -39,7 +39,7 @@
             $ConDescuento = $SubTotal * 0.25;
             $PrecioTotal =  $SubTotal - $ConDescuento;
 
-            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS: $numTickets numTickets </h2>";
+            echo "<h2>CANTIDAD DE COMPRA DE BOLETOS: $numTickets </h2>";
 
             echo "<h2>TOTAL A PAGAR: $ $PrecioTotal</h2>";
 
@@ -51,3 +51,7 @@
             break;
     }
     ?>
+<br>
+<br> 
+<br>
+<a href="MenuPrincipal.php" class="link-primary">Volver al menú Principal</a>
