@@ -3,7 +3,10 @@
 <table class="table table-dark">
 <thead>        
         <tr>
-            <td>No.</td>  <td>Servicio</td>  <td>Inversión</td> <td>D U</td>
+            <td>Num</td> 
+            <td>Servicio</td> 
+            <td>Inversión</td> 
+            <td> </td>
        </tr>
 </thead>
 <?php 
