@@ -6,7 +6,7 @@
             <td>No.</td>  <td>Servicio</td>  <td>Inversión</td> <td>D U</td>
        </tr>
 </thead>
-<?php 
+<?php
          $consulta="SELECT *FROM Servicios;";
          $result=mysqli_query($conexion,$consulta);
         while($row = mysqli_fetch_array($result)){ ?>

@@ -6,7 +6,7 @@
          $delete = "DELETE FROM Servicios where ID = $ID;";
          $exec = mysqli_query($conexion,$delete);
          sleep(2);
-         header("Location: consultadeu.php");
+         header("Location: consultaUsuario.php");
         }
 ?>  
 

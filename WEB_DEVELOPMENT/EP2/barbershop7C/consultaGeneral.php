@@ -11,7 +11,7 @@
          $result=mysqli_query($conexion,$consulta);
         while($row = mysqli_fetch_array($result)){ ?>
           <tr>
-            <td> <?php echo $row['ID'];      ?> </td> <td> 
+            <td> <?php echo $row['ID'];?> </td> <td> 
             <?php  echo $row['Nombre'];  ?> </td>
             <td> <?php  echo $row['Precio'];  ?> </td>
           </tr>
