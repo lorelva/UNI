@@ -1,5 +1,5 @@
 </div>
   </main> 
-  <h6>Derechos reservados</h6> 
+  <h5>Derechos reservados:Lorena Valle</h5> 
 </body>
 </html>
