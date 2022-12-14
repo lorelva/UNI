@@ -1,4 +1,4 @@
-<?php include 'Static/connect/baseDatos.php';?>
+<?php include 'Static/connect/db.php';?>
 <?php include 'includes/header.php';?>
 <?php
 
