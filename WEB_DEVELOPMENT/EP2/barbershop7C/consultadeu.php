@@ -9,19 +9,20 @@
 <?php 
          $consulta="SELECT *FROM servicios;";
          $result=mysqli_query($conexion,$consulta);
-        while($row = mysqli_fetch_array($result)){ ?>
+          while($row = mysqli_fetch_array($result))
+          { ?>
           <tr>
-            <td> <?php echo $row['id'];      ?> </td> <td> 
-            <?php  echo $row['nombre'];  ?> </td>
-            <td> <?php  echo $row['precio'];  ?> </td>
-            <td> 
-            <a href="eliminar.php?id=<?php echo $row['id'];?>">
-            <img src="./Static/img/d.png">          
-           </a>  
-            <a href="actualizar.php?id=<?php echo $row['id'];?>">
-            <img src="./Static/img/EA.png">         
-          </a> 
-           </td>            
+                <td> <?php echo $row['id'];?> </td> 
+                <td> <?php  echo $row['nombre'];  ?> </td>
+                <td> <?php  echo $row['precio'];  ?> </td>
+                <td>
+                <a href="eliminar.php?id=<?php echo $row['id'];?>">
+                <img src="./Static/img/d.png">          
+                </a>  
+                <a href="actualizar.php?id=<?php echo $row['id'];?>">
+                <img src="./Static/img/EA.png">         
+                </a> 
+              </td>            
           </tr>
-  <?php }  ?>  
+<?php     } ?>  
 </table> 
