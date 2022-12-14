@@ -2,23 +2,24 @@
 <?php include 'includes/header.php';?>
 <?php
 
-session_start();
+    session_start();
 
-$user= $_POST['usuario'];
+    $user= $_POST['usuario'];
 
-$password= $_POST['contrasena'];
+    $password= $_POST['contrasena'];
 
-$sql = "SELECT *FROM USUARIOS WHERE usuario = '$user' and contrasena='$password';";
+    $sql = "SELECT *FROM USUARIOS WHERE usuario = '$user' and contrasena='$password';";
 
-$exec=mysqli_query($conn,$sql);
-$row = mysqli_fetch_assoc($exec);
+    $exec=mysqli_query($conn,$sql);
+    
+    $row = mysqli_fetch_assoc($exec);
 
-if(($row['usuario']==$user) && ($row['contrasena']==$password))
-{
-    $_SESSION['usuario']=$user;
-    header("Location: index.php");
-}else
-{
-    header("Location: login.php");
-}
+    if(($row['usuario']==$user) && ($row['contrasena']==$password))
+    {
+        $_SESSION['usuario']=$user;
+        header("Location: index.php");
+    }else
+    {
+        header("Location: login.php");
+    }
 ?>

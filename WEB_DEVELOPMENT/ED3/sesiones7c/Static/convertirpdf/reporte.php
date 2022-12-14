@@ -8,13 +8,15 @@
 	$pdf->AddPage();
 	$pdf->SetFillColor(232,232,232);
 	$pdf->SetFont('Arial','B',12);
-	?>
-	<?php
+?>
+
+<?php
 		 $pdf->Cell(65,4,'ID',1,0,'C',true);
 		 $pdf->Cell(65,4,'NOMBRE',1,0,'C',true);
 	     $pdf->Cell(65,4,'PRECIO',1,0,'C',true);
-	?>
-	<?php			   
+?>
+
+<?php			   
 	$pdf->SetFont('Arial','',12);
 	while($row=mysqli_fetch_array($resultado)){
 		$pdf->Ln(4);
