@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php
-iniciarSesion();
+session_start();
 $user = $_SESSION['usuario'];
 
 if (isset($_SESSION['usuario'])) 

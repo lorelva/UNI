@@ -2,7 +2,7 @@
 <?php include 'includes/header.php';?>
 <?php
 
-iniciarSesion();
+session_start();
 
 $user= $_POST['usuario'];
 

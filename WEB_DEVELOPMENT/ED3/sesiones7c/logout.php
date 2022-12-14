@@ -1,6 +1,6 @@
 <?php include 'includes/header.php';?>
 <?php
-    iniciarSesion();
-    salirSesion();
+    session_start();
+    session_destroy();
     header("Location: login.php");   
 ?>
