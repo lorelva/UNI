@@ -1,5 +1,5 @@
 
-function validacion(){
+function validar(){
     if(document.frm1.nombre.value.length==0)
     {
         document.getElementById("nombre").focus();

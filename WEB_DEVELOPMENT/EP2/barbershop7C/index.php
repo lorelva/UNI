@@ -16,16 +16,16 @@
     </div>                  
 <br>
     <div class="form_container">                    
-    <input type="button" value="Enviar Datos"  class="formulario_btn" onclick="validacion()">                    
-    <script src='Static/js/appvlidacion.js'></script>         
+    <input type="button" value="Enviar Datos"  class="formulario_btn" onclick="validar()">                    
+    <script src='Static/js/validacion.js'></script>         
 </form>  
 
 <br>
 <br>
 <br>
-    <a href="consultageneral.php"><img src="./Static/img/query.png"></a> 
-    <a href="consultadeu.php"><img src="./Static/img/update.png"></a>          
-    <a href="Static/convertirpdf/excel.php"><img src="./Static/img/excelicon.png"></a> 
-    <a href="Static/convertirpdf/reporte.php"><img src="./Static/img/pdficon.png"></a> 
+    <a href="consultageneral.php"><img src="./Static/img/question.png"></a> 
+    <a href="consultadeu.php"><img src="./Static/img/actualizar2.png"></a>          
+    <a href="Static/convertirpdf/excel.php"><img src="./Static/img/excel.png"></a> 
+    <a href="Static/convertirpdf/reporte.php"><img src="./Static/img/pdficono.png"></a> 
 
 <?php include 'includes/footer.php';?>

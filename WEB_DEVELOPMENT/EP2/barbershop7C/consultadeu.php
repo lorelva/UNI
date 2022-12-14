@@ -17,10 +17,10 @@
                 <td> <?php  echo $row['precio'];  ?> </td>
                 <td>
                 <a href="eliminar.php?id=<?php echo $row['id'];?>">
-                <img src="./Static/img/d.png">          
+                <img src="./Static/img/eli.png">          
                 </a>  
                 <a href="actualizar.php?id=<?php echo $row['id'];?>">
-                <img src="./Static/img/EA.png">         
+                <img src="./Static/img/acualizar2.png">         
                 </a> 
               </td>            
           </tr>
