@@ -216,7 +216,7 @@ body {
 .table1 {
     font-family: Arial, sans-serif;
     margin: auto;
-    color: #275aa7;
+    color: #99a5b8;
     text-align: center;
 
     border-collapse: separate;
@@ -314,6 +314,7 @@ td {
 .formulario_btn {
     height: 30px;
     width: 50%;
+    align-content: center;
     background: #fab51f;
     color: #10033b;
     font-weight: bold;

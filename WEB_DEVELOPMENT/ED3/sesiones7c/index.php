@@ -7,10 +7,11 @@
     {
         echo "INICIO DE SESIÓN";
         echo "BIENVENIDO(A): $user";
-    ?>
+?>
     <p>OPCIONES A REALIZAR COMO INICIO DE SESIÓN</p>
     <a href="logout.php">CERRAR</a>
-    <?php
+
+<?php
     } else 
     {
         header("Location: login.php");
