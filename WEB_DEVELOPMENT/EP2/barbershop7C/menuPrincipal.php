@@ -15,20 +15,13 @@
     </div>
     <BR>
     <div class="form_container">
-        <input type="button" value="Enviar Datos" class="formulario_btn" onclick="valIDacion()">
+        <input type="button" value="Enviar Datos" class="formulario_btn" onclick="validarDatos()">
         <script src='Static/js/appvlIDacion.js'></script>
 </form>
 <hr>
-<a href="consultageneral.php">
-    <img src="./Static/img/query.png">
-</a>
-<a href="consultadeu.php">
-    <img src="./Static/img/update.png">
-</a>
-<a href="Static/convertirpdf/excel.php">
-    <img src="./Static/img/excelicon.png">
-</a>
-<a href="Static/convertirpdf/reporte.php">
-    <img src="./Static/img/pdficon.png">
-</a>
+
+<a href="consultaGeneral.php"><img src="./Static/img/query.png"></a>
+<a href="consultaUusario.php"><img src="./Static/img/update.png"></a>
+<a href="Static/convertirpdf/excel.php"><img src="./Static/img/excelicon.png"></a>
+<a href="Static/convertirpdf/reporte.php"><img src="./Static/img/pdficon.png"></a>
 <?php include 'includes/footer.php'; ?>

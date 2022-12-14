@@ -20,7 +20,7 @@
           $Precio=$_POST['Precio'];
           $query="UPDATE Servicios SET Nombre = '$Nombre', Precio='$Precio' where  ID=$ID;";
           mysqli_query($conexion,$query);
-          header("Location: consultadeu.php");
+          header("Location: consultaUsuario.php");
         }
 ?>  
 
@@ -31,19 +31,18 @@
 
 <div class="form_container">
      <label for="Nombre" class="formulario_label">
-     Nombre del Servicio:</label>
+      NOMBRE DEL SERVICIO:</label>
      <input type="text" name="Nombre" ID="Nombre" class="formulario_input"
       value ="<?php  echo $Nombre  ?>" >
 </div> 
 
 <div class="form_container">
      <label for="Precio" class="formulario_label">
-      Precio del Servicio:</label>
+      PRECIO DEL SERVICIO:</label>
      <input type="text" name="Precio" ID="Precio" class="formulario_input"
      value ="<?php  echo $Precio; ?>" >
 </div>  
-<br>  <br>  <br>  
-<BUTTON name="update"  class="formulario_btn">   
-       ACTUALIZAR  
-</BUTTON>   
+<br>
+<br>  
+<button name="update"  class="formulario_btn">ACTUALIZAR</button>   
 </form>
