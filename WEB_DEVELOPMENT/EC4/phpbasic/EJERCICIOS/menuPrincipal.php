@@ -108,7 +108,7 @@
                 <div class="questions__answer">
                     <h3 class="questions__title">KILOMETROS A PIES, MILLAS, METROS, cm</h3>
                     <form method='post' action='kilometros.php'>
-                        KILOMETROS <input type="text" name="txtkilometros">
+                        KILOMETROS <input type="text" name="km">
                         <br>
                         <br>
                         <input type="submit" value="Calcular">

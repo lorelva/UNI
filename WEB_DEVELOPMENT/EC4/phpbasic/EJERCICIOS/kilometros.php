@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-        $kilometros = $_POST['txtkilometros'];
+        $kilometros = $_POST['km'];
         $pies = $kilometros*3280.84;
         $millas = $kilometros*0.621371;
         $metros = $kilometros*1000;
@@ -17,7 +17,7 @@
         
     ?>
     <form method='post' action='kilometros.php'>
-        Kilometros <input type="text" name="txtkilometros" value="<?php echo $kilometros; ?>" disabled>
+        Kilometros <input type="text" name="km" value="<?php echo $kilometros; ?>" disabled>
         <br><br>
         Resultado en pies: <input type="text" value="<?php echo $pies; ?>" disabled>
         <br><br>

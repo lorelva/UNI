@@ -1,7 +1,7 @@
 
 :root {
     --padding-container: 100px 0;
-    --color-title: #062d75;
+    --color-title: #4c9dac;
 }
 
 body {
@@ -37,7 +37,7 @@ body {
 .questions__padding {
     padding: 0;
     transition: padding .3s;
-    border: 1px solid #5454D4;
+    border: 1px solid #54d4a3;
     border-radius: 6px;
 }
 .questions__padding--add {
