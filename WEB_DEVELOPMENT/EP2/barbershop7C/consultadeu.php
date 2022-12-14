@@ -17,7 +17,7 @@
                 <td> <?php  echo $row['precio'];  ?> </td>
                 <td>
                 <a href="eliminar.php?id=<?php echo $row['id'];?>">
-                <img src="./Static/img/eli.png">          
+                <img src="./Static/img/eli.png" width="45" height="45">          
                 </a>  
                 <a href="actualizar.php?id=<?php echo $row['id'];?>">
                 <img src="./Static/img/acualizar2.png" width="45" height="45">         
