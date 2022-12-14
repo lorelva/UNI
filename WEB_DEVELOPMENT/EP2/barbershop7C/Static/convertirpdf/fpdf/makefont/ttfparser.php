@@ -118,14 +118,14 @@ class TTFParser
 		$this->glyphs = array();
 		for($i=0;$i<$this->numberOfHMetrics;$i++)
 		{
-			$advanceWidth = $this->ReadUShort();
+			$advanceWIDth = $this->ReadUShort();
 			$lsb = $this->ReadShort();
-			$this->glyphs[$i] = array('w'=>$advanceWidth, 'lsb'=>$lsb);
+			$this->glyphs[$i] = array('w'=>$advanceWIDth, 'lsb'=>$lsb);
 		}
 		for($i=$this->numberOfHMetrics;$i<$this->numGlyphs;$i++)
 		{
 			$lsb = $this->ReadShort();
-			$this->glyphs[$i] = array('w'=>$advanceWidth, 'lsb'=>$lsb);
+			$this->glyphs[$i] = array('w'=>$advanceWIDth, 'lsb'=>$lsb);
 		}
 	}
 
@@ -210,8 +210,8 @@ class TTFParser
 
 		$startCount = array();
 		$endCount = array();
-		$idDelta = array();
-		$idRangeOffset = array();
+		$IDDelta = array();
+		$IDRangeOffset = array();
 		$this->chars = array();
 		fseek($this->f, $this->tables['cmap']['offset']+$offset31, SEEK_SET);
 		$format = $this->ReadUShort();
@@ -226,17 +226,17 @@ class TTFParser
 		for($i=0;$i<$segCount;$i++)
 			$startCount[$i] = $this->ReadUShort();
 		for($i=0;$i<$segCount;$i++)
-			$idDelta[$i] = $this->ReadShort();
+			$IDDelta[$i] = $this->ReadShort();
 		$offset = ftell($this->f);
 		for($i=0;$i<$segCount;$i++)
-			$idRangeOffset[$i] = $this->ReadUShort();
+			$IDRangeOffset[$i] = $this->ReadUShort();
 
 		for($i=0;$i<$segCount;$i++)
 		{
 			$c1 = $startCount[$i];
 			$c2 = $endCount[$i];
-			$d = $idDelta[$i];
-			$ro = $idRangeOffset[$i];
+			$d = $IDDelta[$i];
+			$ro = $IDRangeOffset[$i];
 			if($ro>0)
 				fseek($this->f, $offset+2*$i+$ro, SEEK_SET);
 			for($c=$c1;$c<=$c2;$c++)
@@ -245,16 +245,16 @@ class TTFParser
 					break;
 				if($ro>0)
 				{
-					$gid = $this->ReadUShort();
-					if($gid>0)
-						$gid += $d;
+					$gID = $this->ReadUShort();
+					if($gID>0)
+						$gID += $d;
 				}
 				else
-					$gid = $c+$d;
-				if($gid>=65536)
-					$gid -= 65536;
-				if($gid>0)
-					$this->chars[$c] = $gid;
+					$gID = $c+$d;
+				if($gID>=65536)
+					$gID -= 65536;
+				if($gID>0)
+					$this->chars[$c] = $gID;
 			}
 		}
 	}
@@ -292,7 +292,7 @@ class TTFParser
 	{
 		$this->Seek('OS/2');
 		$version = $this->ReadUShort();
-		$this->Skip(3*2); // xAvgCharWidth, usWeightClass, usWidthClass
+		$this->Skip(3*2); // xAvgCharWIDth, usWeightClass, usWIDthClass
 		$fsType = $this->ReadUShort();
 		$this->embeddable = ($fsType!=2) && ($fsType & 0x200)==0;
 		$this->Skip(11*2+10+4*4+4);
@@ -360,7 +360,7 @@ class TTFParser
 		for($i=0;$i<$this->numGlyphs;$i++)
 		{
 			$this->subsettedGlyphs[] = $i;
-			$this->glyphs[$i]['ssid'] = $i;
+			$this->glyphs[$i]['ssID'] = $i;
 		}*/
 
 		$this->AddGlyph(0);
@@ -375,16 +375,16 @@ class TTFParser
 		}
 	}
 
-	function AddGlyph($id)
+	function AddGlyph($ID)
 	{
-		if(!isset($this->glyphs[$id]['ssid']))
+		if(!isset($this->glyphs[$ID]['ssID']))
 		{
-			$this->glyphs[$id]['ssid'] = count($this->subsettedGlyphs);
-			$this->subsettedGlyphs[] = $id;
-			if(isset($this->glyphs[$id]['components']))
+			$this->glyphs[$ID]['ssID'] = count($this->subsettedGlyphs);
+			$this->subsettedGlyphs[] = $ID;
+			if(isset($this->glyphs[$ID]['components']))
 			{
-				foreach($this->glyphs[$id]['components'] as $cid)
-					$this->AddGlyph($cid);
+				foreach($this->glyphs[$ID]['components'] as $cID)
+					$this->AddGlyph($cID);
 			}
 		}
 	}
@@ -406,7 +406,7 @@ class TTFParser
 		if(!isset($this->subsettedChars))
 			return;
 
-		// Divide charset in contiguous segments
+		// DivIDe charset in contiguous segments
 		$chars = $this->subsettedChars;
 		sort($chars);
 		$segments = array();
@@ -428,9 +428,9 @@ class TTFParser
 		// Build a Format 4 subtable
 		$startCount = array();
 		$endCount = array();
-		$idDelta = array();
-		$idRangeOffset = array();
-		$glyphIdArray = '';
+		$IDDelta = array();
+		$IDRangeOffset = array();
+		$glyphIDArray = '';
 		for($i=0;$i<$segCount;$i++)
 		{
 			list($start, $end) = $segments[$i];
@@ -439,23 +439,23 @@ class TTFParser
 			if($start!=$end)
 			{
 				// Segment with multiple chars
-				$idDelta[] = 0;
-				$idRangeOffset[] = strlen($glyphIdArray) + ($segCount-$i)*2;
+				$IDDelta[] = 0;
+				$IDRangeOffset[] = strlen($glyphIDArray) + ($segCount-$i)*2;
 				for($c=$start;$c<=$end;$c++)
 				{
-					$ssid = $this->glyphs[$this->chars[$c]]['ssid'];
-					$glyphIdArray .= pack('n', $ssid);
+					$ssID = $this->glyphs[$this->chars[$c]]['ssID'];
+					$glyphIDArray .= pack('n', $ssID);
 				}
 			}
 			else
 			{
 				// Segment with a single char
 				if($start<0xFFFF)
-					$ssid = $this->glyphs[$this->chars[$start]]['ssid'];
+					$ssID = $this->glyphs[$this->chars[$start]]['ssID'];
 				else
-					$ssid = 0;
-				$idDelta[] = $ssid - $start;
-				$idRangeOffset[] = 0;
+					$ssID = 0;
+				$IDDelta[] = $ssID - $start;
+				$IDRangeOffset[] = 0;
 			}
 		}
 		$entrySelector = 0;
@@ -473,11 +473,11 @@ class TTFParser
 		$cmap .= pack('n', 0); // reservedPad
 		foreach($startCount as $val)
 			$cmap .= pack('n', $val);
-		foreach($idDelta as $val)
+		foreach($IDDelta as $val)
 			$cmap .= pack('n', $val);
-		foreach($idRangeOffset as $val)
+		foreach($IDRangeOffset as $val)
 			$cmap .= pack('n', $val);
-		$cmap .= $glyphIdArray;
+		$cmap .= $glyphIDArray;
 
 		$data = pack('nn', 0, 1); // version, numTables
 		$data .= pack('nnN', 3, 1, 12); // platformID, encodingID, offset
@@ -497,9 +497,9 @@ class TTFParser
 	function BuildHmtx()
 	{
 		$data = '';
-		foreach($this->subsettedGlyphs as $id)
+		foreach($this->subsettedGlyphs as $ID)
 		{
-			$glyph = $this->glyphs[$id];
+			$glyph = $this->glyphs[$ID];
 			$data .= pack('nn', $glyph['w'], $glyph['lsb']);
 		}
 		$this->SetTable('hmtx', $data);
@@ -509,13 +509,13 @@ class TTFParser
 	{
 		$data = '';
 		$offset = 0;
-		foreach($this->subsettedGlyphs as $id)
+		foreach($this->subsettedGlyphs as $ID)
 		{
 			if($this->indexToLocFormat==0)
 				$data .= pack('n', $offset/2);
 			else
 				$data .= pack('N', $offset);
-			$offset += $this->glyphs[$id]['length'];
+			$offset += $this->glyphs[$ID]['length'];
 		}
 		if($this->indexToLocFormat==0)
 			$data .= pack('n', $offset/2);
@@ -528,18 +528,18 @@ class TTFParser
 	{
 		$tableOffset = $this->tables['glyf']['offset'];
 		$data = '';
-		foreach($this->subsettedGlyphs as $id)
+		foreach($this->subsettedGlyphs as $ID)
 		{
-			$glyph = $this->glyphs[$id];
+			$glyph = $this->glyphs[$ID];
 			fseek($this->f, $tableOffset+$glyph['offset'], SEEK_SET);
 			$glyph_data = $this->Read($glyph['length']);
 			if(isset($glyph['components']))
 			{
 				// Composite glyph
-				foreach($glyph['components'] as $offset=>$cid)
+				foreach($glyph['components'] as $offset=>$cID)
 				{
-					$ssid = $this->glyphs[$cid]['ssid'];
-					$glyph_data = substr_replace($glyph_data, pack('n',$ssid), $offset, 2);
+					$ssID = $this->glyphs[$cID]['ssID'];
+					$glyph_data = substr_replace($glyph_data, pack('n',$ssID), $offset, 2);
 				}
 			}
 			$data .= $glyph_data;
@@ -566,9 +566,9 @@ class TTFParser
 			$names = '';
 			$data = $this->Read(2*4+2*2+5*4);
 			$data .= pack('n', $numberOfGlyphs);
-			foreach($this->subsettedGlyphs as $id)
+			foreach($this->subsettedGlyphs as $ID)
 			{
-				$name = $this->glyphs[$id]['name'];
+				$name = $this->glyphs[$ID]['name'];
 				if(is_string($name))
 				{
 					$data .= pack('n', 258+$numNames);

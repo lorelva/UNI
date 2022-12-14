@@ -205,7 +205,7 @@
 !CC U+00CC Igrave
 !CD U+00CD Iacute
 !CE U+00CE Icircumflex
-!CF U+00CF Idieresis
+!CF U+00CF IDieresis
 !D0 U+0110 Dcroat
 !D1 U+0143 Nacute
 !D2 U+00D2 Ograve
@@ -237,7 +237,7 @@
 !EC U+00EC igrave
 !ED U+00ED iacute
 !EE U+00EE icircumflex
-!EF U+00EF idieresis
+!EF U+00EF IDieresis
 !F0 U+0111 dcroat
 !F1 U+0144 nacute
 !F2 U+00F2 ograve

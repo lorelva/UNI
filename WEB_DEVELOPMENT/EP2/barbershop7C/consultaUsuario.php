@@ -1,4 +1,4 @@
-<?php include 'Static/connect/db.php';?>
+<?php include 'Static/connect/baseDatos.php'; ?>
 <?php include 'includes/header.php';?>
 <table class="table table-dark">
 <thead>        
@@ -7,18 +7,18 @@
        </tr>
 </thead>
 <?php 
-         $consulta="SELECT *FROM servicios;";
+         $consulta="SELECT *FROM Servicios;";
          $result=mysqli_query($conexion,$consulta);
         while($row = mysqli_fetch_array($result)){ ?>
           <tr>
-            <td> <?php echo $row['id'];      ?> </td> <td> 
-            <?php  echo $row['nombre'];  ?> </td>
-            <td> <?php  echo $row['precio'];  ?> </td>
+            <td> <?php echo $row['ID'];      ?> </td> <td> 
+            <?php  echo $row['Nombre'];  ?> </td>
+            <td> <?php  echo $row['Precio'];  ?> </td>
             <td> 
-            <a href="eliminar.php?id=<?php echo $row['id'];?>">
+            <a href="eliminar.php?ID=<?php echo $row['ID'];?>">
             <img src="./Static/img/d.png">          
            </a>  
-            <a href="actualizar.php?id=<?php echo $row['id'];?>">
+            <a href="actualizar.php?ID=<?php echo $row['ID'];?>">
             <img src="./Static/img/EA.png">         
           </a> 
            </td>            

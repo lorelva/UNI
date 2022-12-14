@@ -1,10 +1,10 @@
-<?php include 'Static/connect/db.php';?>
-<?php include 'includes/header.php';?>
-<?php 
-$servicio=$_POST['nombre'];
-$precio=$_POST['precio'];
-$sql ="INSERT INTO servicios(nombre, precio)values('$servicio',$precio);";
-    $query = mysqli_query($conexion,$sql);
-    sleep(3);
-    header("Location: index.php");
+<?php include 'Static/connect/baseDatos.php'; ?>
+<?php include 'includes/header.php'; ?>
+<?php
+    $Servicio = $_POST['Nombre'];
+    $Precio = $_POST['Precio'];
+    $sql = "INSERT INTO Servicios(Nombre, Precio)values('$Servicio',$Precio);";
+    $query = mysqli_query($conexion, $sql);
+    sleep(2);
+    header("Location: menuPrincipal.php");
 ?>

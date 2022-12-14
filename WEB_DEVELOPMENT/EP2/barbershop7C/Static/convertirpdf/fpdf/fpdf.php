@@ -35,7 +35,7 @@ protected $bMargin;            // page break margin
 protected $cMargin;            // cell margin
 protected $x, $y;              // current position in user unit
 protected $lasth;              // height of last printed cell
-protected $LineWidth;          // line width in user unit
+protected $LineWIDth;          // line wIDth in user unit
 protected $fontpath;           // path containing fonts
 protected $CoreFonts;          // array of core font names
 protected $fonts;              // array of used fonts
@@ -157,8 +157,8 @@ function __construct($orientation='P', $unit='mm', $size='A4')
 	$this->SetMargins($margin,$margin);
 	// Interior cell margin (1 mm)
 	$this->cMargin = $margin/10;
-	// Line width (0.2 mm)
-	$this->LineWidth = .567/$this->k;
+	// Line wIDth (0.2 mm)
+	$this->LineWIDth = .567/$this->k;
 	// Automatic page break
 	$this->SetAutoPageBreak(true,2*$margin);
 	// Default display mode
@@ -210,7 +210,7 @@ function SetAutoPageBreak($auto, $margin=0)
 function SetDisplayMode($zoom, $layout='default')
 {
 	// Set display mode in viewer
-	if($zoom=='fullpage' || $zoom=='fullwidth' || $zoom=='real' || $zoom=='default' || !is_string($zoom))
+	if($zoom=='fullpage' || $zoom=='fullwIDth' || $zoom=='real' || $zoom=='default' || !is_string($zoom))
 		$this->ZoomMode = $zoom;
 	else
 		$this->Error('Incorrect zoom display mode: '.$zoom);
@@ -296,7 +296,7 @@ function AddPage($orientation='', $size='', $rotation=0)
 	$family = $this->FontFamily;
 	$style = $this->FontStyle.($this->underline ? 'U' : '');
 	$fontsize = $this->FontSizePt;
-	$lw = $this->LineWidth;
+	$lw = $this->LineWIDth;
 	$dc = $this->DrawColor;
 	$fc = $this->FillColor;
 	$tc = $this->TextColor;
@@ -314,8 +314,8 @@ function AddPage($orientation='', $size='', $rotation=0)
 	$this->_beginpage($orientation,$size,$rotation);
 	// Set line cap style to square
 	$this->_out('2 J');
-	// Set line width
-	$this->LineWidth = $lw;
+	// Set line wIDth
+	$this->LineWIDth = $lw;
 	$this->_out(sprintf('%.2F w',$lw*$this->k));
 	// Set font
 	if($family)
@@ -333,10 +333,10 @@ function AddPage($orientation='', $size='', $rotation=0)
 	$this->InHeader = true;
 	$this->Header();
 	$this->InHeader = false;
-	// Restore line width
-	if($this->LineWidth!=$lw)
+	// Restore line wIDth
+	if($this->LineWIDth!=$lw)
 	{
-		$this->LineWidth = $lw;
+		$this->LineWIDth = $lw;
 		$this->_out(sprintf('%.2F w',$lw*$this->k));
 	}
 	// Restore font
@@ -406,9 +406,9 @@ function SetTextColor($r, $g=null, $b=null)
 	$this->ColorFlag = ($this->FillColor!=$this->TextColor);
 }
 
-function GetStringWidth($s)
+function GetStringWIDth($s)
 {
-	// Get width of a string in the current font
+	// Get wIDth of a string in the current font
 	$s = (string)$s;
 	$cw = &$this->CurrentFont['cw'];
 	$w = 0;
@@ -418,12 +418,12 @@ function GetStringWidth($s)
 	return $w*$this->FontSize/1000;
 }
 
-function SetLineWidth($width)
+function SetLineWIDth($wIDth)
 {
-	// Set line width
-	$this->LineWidth = $width;
+	// Set line wIDth
+	$this->LineWIDth = $wIDth;
 	if($this->page>0)
-		$this->_out(sprintf('%.2F w',$width*$this->k));
+		$this->_out(sprintf('%.2F w',$wIDth*$this->k));
 }
 
 function Line($x1, $y1, $x2, $y2)
@@ -624,9 +624,9 @@ function Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link
 		if(!isset($this->CurrentFont))
 			$this->Error('No font has been set');
 		if($align=='R')
-			$dx = $w-$this->cMargin-$this->GetStringWidth($txt);
+			$dx = $w-$this->cMargin-$this->GetStringWIDth($txt);
 		elseif($align=='C')
-			$dx = ($w-$this->GetStringWidth($txt))/2;
+			$dx = ($w-$this->GetStringWIDth($txt))/2;
 		else
 			$dx = $this->cMargin;
 		if($this->ColorFlag)
@@ -637,7 +637,7 @@ function Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link
 		if($this->ColorFlag)
 			$s .= ' Q';
 		if($link)
-			$this->Link($this->x+$dx,$this->y+.5*$h-.5*$this->FontSize,$this->GetStringWidth($txt),$this->FontSize,$link);
+			$this->Link($this->x+$dx,$this->y+.5*$h-.5*$this->FontSize,$this->GetStringWIDth($txt),$this->FontSize,$link);
 	}
 	if($s)
 		$this->_out($s);
@@ -889,7 +889,7 @@ function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='')
 	else
 		$info = $this->images[$file];
 
-	// Automatic width and height calculation if needed
+	// Automatic wIDth and height calculation if needed
 	if($w==0 && $h==0)
 	{
 		// Put image at 96 dpi
@@ -926,9 +926,9 @@ function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='')
 		$this->Link($x,$y,$w,$h,$link);
 }
 
-function GetPageWidth()
+function GetPageWIDth()
 {
-	// Get current page width
+	// Get current page wIDth
 	return $this->w;
 }
 
@@ -1002,7 +1002,7 @@ function Output($dest='', $name='', $isUTF8=false)
 				// We send to a browser
 				header('Content-Type: application/pdf');
 				header('Content-Disposition: inline; '.$this->_httpencode('filename',$name,$isUTF8));
-				header('Cache-Control: private, max-age=0, must-revalidate');
+				header('Cache-Control: private, max-age=0, must-revalIDate');
 				header('Pragma: public');
 			}
 			echo $this->buffer;
@@ -1012,7 +1012,7 @@ function Output($dest='', $name='', $isUTF8=false)
 			$this->_checkoutput();
 			header('Content-Type: application/x-download');
 			header('Content-Disposition: attachment; '.$this->_httpencode('filename',$name,$isUTF8));
-			header('Cache-Control: private, max-age=0, must-revalidate');
+			header('Cache-Control: private, max-age=0, must-revalIDate');
 			header('Pragma: public');
 			echo $this->buffer;
 			break;
@@ -1227,7 +1227,7 @@ protected function _dounderline($x, $y, $txt)
 	// Underline text
 	$up = $this->CurrentFont['up'];
 	$ut = $this->CurrentFont['ut'];
-	$w = $this->GetStringWidth($txt)+$this->ws*substr_count($txt,' ');
+	$w = $this->GetStringWIDth($txt)+$this->ws*substr_count($txt,' ');
 	return sprintf('%.2F %.2F %.2F %.2F re f',$x*$this->k,($this->h-($y-$up/1000*$this->FontSize))*$this->k,$w*$this->k,-$ut/1000*$this->FontSizePt);
 }
 
@@ -1543,10 +1543,10 @@ protected function _putpages()
 	// Pages root
 	$this->_newobj(1);
 	$this->_put('<</Type /Pages');
-	$kids = '/Kids [';
+	$kIDs = '/KIDs [';
 	for($n=1;$n<=$nb;$n++)
-		$kids .= $this->PageInfo[$n]['n'].' 0 R ';
-	$this->_put($kids.']');
+		$kIDs .= $this->PageInfo[$n]['n'].' 0 R ';
+	$this->_put($kIDs.']');
 	$this->_put('/Count '.$nb);
 	if($this->DefOrientation=='P')
 	{
@@ -1641,7 +1641,7 @@ protected function _putfonts()
 			$this->_put('/BaseFont /'.$name);
 			$this->_put('/Subtype /'.$type);
 			$this->_put('/FirstChar 32 /LastChar 255');
-			$this->_put('/Widths '.($this->n+1).' 0 R');
+			$this->_put('/WIDths '.($this->n+1).' 0 R');
 			$this->_put('/FontDescriptor '.($this->n+2).' 0 R');
 			if(isset($font['diff']))
 				$this->_put('/Encoding '.$this->encodings[$font['enc']].' 0 R');
@@ -1651,7 +1651,7 @@ protected function _putfonts()
 				$this->_put('/ToUnicode '.$this->cmaps[$cmapkey].' 0 R');
 			$this->_put('>>');
 			$this->_put('endobj');
-			// Widths
+			// WIDths
 			$this->_newobj();
 			$cw = &$font['cw'];
 			$s = '[';
@@ -1707,7 +1707,7 @@ protected function _tounicodecmap($uv)
 	$s .= "/Ordering (UCS)\n";
 	$s .= "/Supplement 0\n";
 	$s .= ">> def\n";
-	$s .= "/CMapName /Adobe-Identity-UCS def\n";
+	$s .= "/CMapName /Adobe-IDentity-UCS def\n";
 	$s .= "/CMapType 2 def\n";
 	$s .= "1 begincodespacerange\n";
 	$s .= "<00> <FF>\n";
@@ -1747,7 +1747,7 @@ protected function _putimage(&$info)
 	$info['n'] = $this->n;
 	$this->_put('<</Type /XObject');
 	$this->_put('/Subtype /Image');
-	$this->_put('/Width '.$info['w']);
+	$this->_put('/WIDth '.$info['w']);
 	$this->_put('/Height '.$info['h']);
 	if($info['cs']=='Indexed')
 		$this->_put('/ColorSpace [/Indexed /DeviceRGB '.(strlen($info['pal'])/3-1).' '.($this->n+1).' 0 R]');
@@ -1831,7 +1831,7 @@ protected function _putcatalog()
 	$this->_put('/Pages 1 0 R');
 	if($this->ZoomMode=='fullpage')
 		$this->_put('/OpenAction ['.$n.' 0 R /Fit]');
-	elseif($this->ZoomMode=='fullwidth')
+	elseif($this->ZoomMode=='fullwIDth')
 		$this->_put('/OpenAction ['.$n.' 0 R /FitH null]');
 	elseif($this->ZoomMode=='real')
 		$this->_put('/OpenAction ['.$n.' 0 R /XYZ null null 1]');

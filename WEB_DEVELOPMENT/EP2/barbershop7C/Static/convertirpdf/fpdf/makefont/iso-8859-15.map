@@ -205,7 +205,7 @@
 !CC U+00CC Igrave
 !CD U+00CD Iacute
 !CE U+00CE Icircumflex
-!CF U+00CF Idieresis
+!CF U+00CF IDieresis
 !D0 U+00D0 Eth
 !D1 U+00D1 Ntilde
 !D2 U+00D2 Ograve
@@ -237,7 +237,7 @@
 !EC U+00EC igrave
 !ED U+00ED iacute
 !EE U+00EE icircumflex
-!EF U+00EF idieresis
+!EF U+00EF IDieresis
 !F0 U+00F0 eth
 !F1 U+00F1 ntilde
 !F2 U+00F2 ograve
@@ -245,7 +245,7 @@
 !F4 U+00F4 ocircumflex
 !F5 U+00F5 otilde
 !F6 U+00F6 odieresis
-!F7 U+00F7 divide
+!F7 U+00F7 divIDe
 !F8 U+00F8 oslash
 !F9 U+00F9 ugrave
 !FA U+00FA uacute

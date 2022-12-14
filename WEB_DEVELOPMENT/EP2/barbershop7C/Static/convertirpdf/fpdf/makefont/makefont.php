@@ -101,23 +101,23 @@ function GetInfoFromTrueType($file, $embed, $subset, $map)
 	$info['UnderlinePosition'] = round($k*$ttf->underlinePosition);
 	$info['FontBBox'] = array(round($k*$ttf->xMin), round($k*$ttf->yMin), round($k*$ttf->xMax), round($k*$ttf->yMax));
 	$info['CapHeight'] = round($k*$ttf->capHeight);
-	$info['MissingWidth'] = round($k*$ttf->glyphs[0]['w']);
-	$widths = array_fill(0, 256, $info['MissingWidth']);
+	$info['MissingWIDth'] = round($k*$ttf->glyphs[0]['w']);
+	$wIDths = array_fill(0, 256, $info['MissingWIDth']);
 	foreach($map as $c=>$v)
 	{
 		if($v['name']!='.notdef')
 		{
 			if(isset($ttf->chars[$v['uv']]))
 			{
-				$id = $ttf->chars[$v['uv']];
-				$w = $ttf->glyphs[$id]['w'];
-				$widths[$c] = round($k*$w);
+				$ID = $ttf->chars[$v['uv']];
+				$w = $ttf->glyphs[$ID]['w'];
+				$wIDths[$c] = round($k*$w);
 			}
 			else
 				Warning('Character '.$v['name'].' is missing');
 		}
 	}
-	$info['Widths'] = $widths;
+	$info['WIDths'] = $wIDths;
 	return $info;
 }
 
@@ -132,13 +132,13 @@ function GetInfoFromType1($file, $embed, $map)
 		// Read first segment
 		$a = unpack('Cmarker/Ctype/Vsize', fread($f,6));
 		if($a['marker']!=128)
-			Error('Font file is not a valid binary Type1');
+			Error('Font file is not a valID binary Type1');
 		$size1 = $a['size'];
 		$data = fread($f, $size1);
 		// Read second segment
 		$a = unpack('Cmarker/Ctype/Vsize', fread($f,6));
 		if($a['marker']!=128)
-			Error('Font file is not a valid binary Type1');
+			Error('Font file is not a valID binary Type1');
 		$size2 = $a['size'];
 		$data .= fread($f, $size2);
 		fclose($f);
@@ -197,21 +197,21 @@ function GetInfoFromType1($file, $embed, $map)
 		$info['Descender'] = $info['FontBBox'][1];
 	$info['Bold'] = isset($info['Weight']) && preg_match('/bold|black/i', $info['Weight']);
 	if(isset($cw['.notdef']))
-		$info['MissingWidth'] = $cw['.notdef'];
+		$info['MissingWIDth'] = $cw['.notdef'];
 	else
-		$info['MissingWidth'] = 0;
-	$widths = array_fill(0, 256, $info['MissingWidth']);
+		$info['MissingWIDth'] = 0;
+	$wIDths = array_fill(0, 256, $info['MissingWIDth']);
 	foreach($map as $c=>$v)
 	{
 		if($v['name']!='.notdef')
 		{
 			if(isset($cw[$v['name']]))
-				$widths[$c] = $cw[$v['name']];
+				$wIDths[$c] = $cw[$v['name']];
 			else
 				Warning('Character '.$v['name'].' is missing');
 		}
 	}
-	$info['Widths'] = $widths;
+	$info['WIDths'] = $wIDths;
 	return $info;
 }
 
@@ -247,12 +247,12 @@ function MakeFontDescriptor($info)
 	else
 		$stemv = 70;
 	$fd .= ",'StemV'=>".$stemv;
-	// MissingWidth
-	$fd .= ",'MissingWidth'=>".$info['MissingWidth'].')';
+	// MissingWIDth
+	$fd .= ",'MissingWIDth'=>".$info['MissingWIDth'].')';
 	return $fd;
 }
 
-function MakeWidthArray($widths)
+function MakeWIDthArray($wIDths)
 {
 	$s = "array(\n\t";
 	for($c=0;$c<=255;$c++)
@@ -265,7 +265,7 @@ function MakeWidthArray($widths)
 			$s .= "'".chr($c)."'";
 		else
 			$s .= "chr($c)";
-		$s .= '=>'.$widths[$c];
+		$s .= '=>'.$wIDths[$c];
 		if($c<255)
 			$s .= ',';
 		if(($c+1)%22==0)
@@ -356,7 +356,7 @@ function MakeDefinitionFile($file, $type, $enc, $embed, $subset, $map, $info)
 	$s .= '$desc = '.MakeFontDescriptor($info).";\n";
 	$s .= '$up = '.$info['UnderlinePosition'].";\n";
 	$s .= '$ut = '.$info['UnderlineThickness'].";\n";
-	$s .= '$cw = '.MakeWidthArray($info['Widths']).";\n";
+	$s .= '$cw = '.MakeWIDthArray($info['WIDths']).";\n";
 	$s .= '$enc = \''.$enc."';\n";
 	$diff = MakeFontEncoding($map);
 	if($diff)

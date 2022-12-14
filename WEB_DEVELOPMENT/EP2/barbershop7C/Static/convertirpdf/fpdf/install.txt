@@ -12,4 +12,4 @@ FPDF error: Could not include font definition file
 Remarks:
 
 - Only the files corresponding to the fonts actually used are necessary
-- The tutorials provided in this package are ready to be executed
+- The tutorials provIDed in this package are ready to be executed
