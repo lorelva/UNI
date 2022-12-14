@@ -12,7 +12,7 @@
         while($row = mysqli_fetch_array($result)){ ?>
           <tr>
             <td> <?php echo $row['ID'];?> </td> <td> 
-            <?php  echo $row['Nombre'];  ?> </td>
+            <?php  echo $row['Nombre']; ?> </td>
             <td> <?php  echo $row['Precio'];  ?> </td>
           </tr>
   <?php }  ?>  

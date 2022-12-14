@@ -1,3 +1,4 @@
+
 function validarDatos(){
     if(document.frm1.Nombre.value.length==0)
     {

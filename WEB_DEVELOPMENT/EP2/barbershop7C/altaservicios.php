@@ -5,7 +5,7 @@
 
     $Precio = $_POST['Precio'];
 
-    $sql = "INSERT INTO Servicios(Nombre, Precio)values('$Servicio',$Precio);";
+    $sql = "INSERT INTO Servicios(Nombre, Precio)values('$Servicio', $Precio);";
 
     $query = mysqli_query($conexion, $sql);
 
