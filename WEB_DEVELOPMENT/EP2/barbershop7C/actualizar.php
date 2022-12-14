@@ -40,5 +40,5 @@
      </div> 
 
      <br><br>  
-     <button name="update"  class="formulario_btn">ACTUALIZAR</button>   
+     <button name="update" class="formulario_btn">ACTUALIZAR</button>   
 </form>
