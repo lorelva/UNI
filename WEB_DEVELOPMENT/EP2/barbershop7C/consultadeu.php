@@ -20,7 +20,7 @@
                 <img src="./Static/img/eli.png">          
                 </a>  
                 <a href="actualizar.php?id=<?php echo $row['id'];?>">
-                <img src="./Static/img/acualizar2.png" width="20" height="20">         
+                <img src="./Static/img/acualizar2.png" width="45" height="45">         
                 </a> 
               </td>            
           </tr>

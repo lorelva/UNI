@@ -23,9 +23,9 @@
 <br>
 <br>
 <br>
-    <a href="consultageneral.php"><img src="./Static/img/question.png" width="20" height="20"></a> 
-    <a href="consultadeu.php"><img src="./Static/img/actualizar.png" width="20" height="20"></a>          
-    <a href="Static/convertirpdf/excel.php"><img src="./Static/img/excel.png" width="20" height="20"></a> 
-    <a href="Static/convertirpdf/reporte.php"><img src="./Static/img/pdficono.png" width="20" height="20"></a> 
+    <a href="consultageneral.php"><img src="./Static/img/question.png" width="45" height="45"></a> 
+    <a href="consultadeu.php"><img src="./Static/img/actualizar.png" width="45" height="45"></a>          
+    <a href="Static/convertirpdf/excel.php"><img src="./Static/img/excel.png" width="45" height="45"></a> 
+    <a href="Static/convertirpdf/reporte.php"><img src="./Static/img/pdficono.png" width="45" height="45"></a> 
 
 <?php include 'includes/footer.php';?>
