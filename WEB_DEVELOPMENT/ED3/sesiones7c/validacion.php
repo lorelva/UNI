@@ -9,7 +9,7 @@ include 'includes/header.php';
 
     $password= $_POST['contrasena'];
 
-    $sql = "SELECT *FROM USUARIOS WHERE usuario = '$user' and contrasena='$password';";
+    $sql = "SELECT *FROM USUARIOS WHERE usuario = '$user' AND contrasena='$password';";
 
     $exec=mysqli_query($conn,$sql);
 

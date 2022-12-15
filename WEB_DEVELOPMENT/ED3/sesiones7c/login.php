@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
-<h2>AUTENTIFICACIÓN</h2>
+<h2>INICIAR SESIÓN</h2>
 
-<form method="POST" name="formulario" id="formulario" action="validation.php">
+<form method="POST" name="formulario" id="formulario" action="validacion.php">
 
     <div class="form_container">
         <label for="usuario" class="formulario_label">USER:
