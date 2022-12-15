@@ -1,7 +1,8 @@
-<?php include 'Static/connect/db.php';?>
-<?php include 'includes/header.php';?>
 <?php
 
+include 'Static/connect/db.php';
+include 'includes/header.php';
+ 
     session_start();
 
     $user= $_POST['usuario'];
@@ -11,13 +12,13 @@
     $sql = "SELECT *FROM USUARIOS WHERE usuario = '$user' and contrasena='$password';";
 
     $exec=mysqli_query($conn,$sql);
-    
+
     $row = mysqli_fetch_assoc($exec);
 
     if(($row['usuario']==$user) && ($row['contrasena']==$password))
     {
         $_SESSION['usuario']=$user;
-        header("Location: index.php");
+        header("Location: indexPrincipal.php");
     }else
     {
         header("Location: login.php");
