@@ -20,4 +20,4 @@
     </div>
 </form>
 
-<script src="Static/js/validar.js"></script>
+<script src="Static/js/validar.js"></script> 
