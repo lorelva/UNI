@@ -169,10 +169,16 @@ body {
     font-size: 1.6rem
 }
 
-p {
-    color: #fff;
-    font-size: 2rem
+h2{
+    color: rgba(44, 26, 126, 0.63);
+    
 }
+
+h3{
+    color:#05010f;
+
+}
+
 
 .contenedor {
     width: 95%;
