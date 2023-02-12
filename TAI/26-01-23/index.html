@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><h1>Formulario</h1></div>
+        <form action="registro.php" method="POST">
+            <table border="5px" align="center">
+                <tr>
+                    <td>Nombre</td>
+                    <th>
+                        <label for="nom"></label>
+                        <input type="text" name="nom" id="nom" required/>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Nombre de usuario</td>
+                    <th>
+                        <label for="user"></label>
+                        <input type="text" name="user" id="user" required/>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Contraseña</td>
+                    <th>
+                        <label for="pass"></label>
+                        <input type="text" name="pass" id="pass" required/>
+                    </th>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="submit" name="enviar" id="enviar" value="Registro"/>
+                    </td>
+                    <td align="center">
+                        <input type="reset" name="borrar" id="borrar" value="Restablece"/>
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+</body>
+</html>
+
+
+
