@@ -1,0 +1,50 @@
+#Fondo
+{
+    background:url("../IMG/hola.jpg");
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    position:absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -moz-transition: left 100s linear;
+    -webkit-transition: left 100s linear;
+    -o-transition:left 100s linear;
+}
+
+#Transicion:hover #Fondo
+{
+    left: -9999px;
+}
+
+#Contenido
+{
+    margin: 6em 10em;
+    background-color: #333;
+    opacity: 0.95;
+    color: #ccc;
+    padding: 3em;
+    border: 3px solid #666;
+}
+
+#Contenido h2
+{
+    margin: 1em 0;
+    font-weight: bold;
+    font-size: 25px;
+    /*color :black; */
+    color: #fff;
+    text-align: center;
+}
+
+
+#Contenido p
+{
+    margin: 1em 0;
+    font-weight: bold;
+    font-size: 25px;
+    /*color :black; */
+    color: #0cf199;
+    text-align: center;
+}
